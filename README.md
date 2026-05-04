@@ -52,6 +52,43 @@ apt install wireguard -y
 - Use `.gitignore` to prevent accidental commits
 - Store backups in a **secure location**
 
+## 📱 Mobile Setup (QR Codes)
+
+**Easiest way for mobile users:**
+
+1. **Generate QR code:**
+   ```bash
+   ./scripts/generate-qr.sh client.conf
+   ./scripts/generate-qr.sh -o client_qr.png client.conf
+   ```
+
+2. **Share QR code image** (encrypted)
+
+3. **Client scans with WireGuard app:**
+   - Open WireGuard (iOS/Android)
+   - Tap "+"
+   - Tap "Create from QR code"
+   - Scan the QR code
+   - Toggle ON
+
+See [QR_CODE_GUIDE.md](docs/QR_CODE_GUIDE.md) for detailed instructions.
+
+## Scripts
+
+- `scripts/setup-server.sh` - Automated server setup
+- `scripts/generate-client.sh` - Interactive client setup
+- `scripts/generate-qr.sh` - Generate QR codes from config files
+- `scripts/batch-qr-generator.sh` - Generate QR codes for multiple clients
+- `scripts/manage-clients.sh` - Add/remove clients from server
+
+## Documentation
+
+- `docs/README.md` - This guide
+- `docs/MOBILE_SETUP.md` - Mobile connection guide
+- `docs/QR_CODE_GUIDE.md` - QR code generation & sharing
+- `docs/SHARING_GUIDE.md` - How to share VPN with others
+- `docs/TROUBLESHOOTING.md` - Common issues & fixes
+
 ## Files
 
 - `client.conf.example` - Template for client configuration
